@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editare Ziua {{ day }}</title>
+</head>
+<body>
+    <h1>Editare Ziua {{ day }}</h1>
+    <form method="post" enctype="multipart/form-data">
+        <label for="image">Imagine:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <br>
+        <label for="text">Text:</label>
+        <textarea id="text" name="text" required>{{ entry['text'] }}</textarea>
+        <br>
+        <input type="submit" value="Salvează">
+    </form>
+</body>
+</html>
