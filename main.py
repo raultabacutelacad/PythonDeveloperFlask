@@ -1,10 +1,15 @@
-from flask import Flask, render_template, request, redirect,url_for
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+
 app = Flask(__name__)
 
 
 calendar_entries = {
     1: {'image': 'img1.jpg', 'text': 'Text pentru ziua 1'},
 }
+
+@app.route("/css/<path:file>")
+def return_css(file):
+    return send_from_directory('css', file)
 
 @app.route('/')
 def index():
