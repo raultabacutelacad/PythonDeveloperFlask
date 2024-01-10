@@ -31,4 +31,6 @@ def edit(day):
 
 
 if __name__ == "__main__":
+    #crearea tabelelor si modelelor
+    db.create_all()
     app.run(debug=True)
