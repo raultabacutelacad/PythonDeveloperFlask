@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Calendar Advent</title>
-    <link href="/css/test.css" type="text/css">
+    <link href="/css/test.css" rel="stylesheet">
 </head>
 <body>
-aaaa
+<div class="flex-container">
+    {% for entry in calendar_entries%}
+        <div class="zi-container">
+            <img src="{{ url_for('static',filename='img1.jpg') }}" class="zi-imagine"/>
+            <div class="mesaj">{{entry['mesaj']}}</div>
+            <div class="button-container">
+                <a href="/edit/{{entry['id']}}"><button class="button-edit">Editeaza</button></a>
+                <a href="/deschide/{{entry['id']}}"><button class="button-deschide">Deschide</button><a>
+            </div>
+
+        </div>
+    {% endfor %}
+</div>
 </body>
 </html>
