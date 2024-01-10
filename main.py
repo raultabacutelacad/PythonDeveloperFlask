@@ -57,3 +57,11 @@ def edit(day):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+    @app.route('/mark_day',methods=['GET', 'POST'])
+    def mark_day():
+        if request.method == 'POST':
+            return "Ziua a fost marcata ca fiind deschisa sau inchisa"
+        else:
+            return
+        render_template('mark_day.html')
