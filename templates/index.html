@@ -8,16 +8,16 @@
 <body>
 <div class="flex-container">
     {% for entry in calendar_entries%}
-        <div class="zi-container">
+        <div class="zi-container{% if entry['day'] >= 11 and entry['day'] <= 24 %} gray-box{% endif %}">
             <img src="{{ url_for('static',filename='img1.jpg') }}" class="zi-imagine"/>
             <div class="mesaj">{{entry['mesaj']}}</div>
             <div class="button-container">
                 <a href="/edit/{{entry['id']}}"><button class="button-edit">Editeaza</button></a>
-                <a href="/deschide/{{entry['id']}}"><button class="button-deschide">Deschide</button><a>
+                <a href="/deschide/{{entry['id']}}"><button class="button-deschide">Deschide</button></a>
             </div>
-
         </div>
     {% endfor %}
+
 </div>
 </body>
 </html>
