@@ -56,5 +56,5 @@ _Optional_ Nu se pot deschide zile in avans. (Spre exemplu, daca suntem pe 10 de
 8. Ascunderea unui card daca ziua nu a fost deschisa. - Ionela
    1. Putem presupune ca zilele 1-10 sunt deschise si 11-24 inchise. Pana cand avem acces la baza de date 
    2. Concret - ziele 1-10 se vor afisa conform template. zilele 11-24 se vor afisa ca patrate gri
-9. Salvarea informatiilor in baza de date, atunci cand se face editarea - Data 
+9. Salvarea informatiilor in baza de date, atunci cand se face editarea - Dana 
 10. Comportamentul de marcare a unei zile ca fiind deschise - Alex
