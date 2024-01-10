@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from database import db, Ziua
 
 app = Flask(__name__)
 
