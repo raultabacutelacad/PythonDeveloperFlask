@@ -51,7 +51,7 @@ _Optional_ Nu se pot deschide zile in avans. (Spre exemplu, daca suntem pe 10 de
 4. Definirea modelelor ce fac referire la baza de date. - Emanuela
 5. Template homepage - Raul 
 6. Informatii mock in baza de date - Raul 
-7. Preluarea informatiilor din baza de date si afisarea lor in frontend.- Dana
+7. Preluarea informatiilor din baza de date si afisarea lor in frontend.- Dan
    1. Putem folosi o imagine standard si un text standard pana este gata 4. 
 8. Ascunderea unui card daca ziua nu a fost deschisa. - Ionela
    1. Putem presupune ca zilele 1-10 sunt deschise si 11-24 inchise. Pana cand avem acces la baza de date 

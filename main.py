@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
+import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root@localhost:3306/advent'
@@ -50,8 +51,9 @@ def return_css(file):
 
 @app.route('/')
 def index():
-    list = calendar_entries.values()
-    return render_template('index.html', calendar_entries=list)
+    zile = Ziua.query.all()
+    return render_template('index.html', zile=zile)
+
 
 @app.route('/edit/<int:day>', methods=['GET', 'POST'])
 def edit(day):

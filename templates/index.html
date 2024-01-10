@@ -7,15 +7,14 @@
 </head>
 <body>
 <div class="flex-container">
-    {% for entry in calendar_entries%}
+    {% for ziua in zile %}
         <div class="zi-container">
-            <img src="{{ url_for('static',filename='img1.jpg') }}" class="zi-imagine"/>
-            <div class="mesaj">{{entry['mesaj']}}</div>
+            <img src="{{ url_for('static', filename=ziua.imagine) }}" class="zi-imagine"/>
+            <div class="mesaj">{{ ziua.mesaj }}</div>
             <div class="button-container">
-                <a href="/edit/{{entry['id']}}"><button class="button-edit">Editeaza</button></a>
-                <a href="/deschide/{{entry['id']}}"><button class="button-deschide">Deschide</button><a>
+                <a href="/edit/{{ ziua.id }}"><button class="button-edit">Editeaza</button></a>
+                <a href="/deschide/{{ ziua.id }}"><button class="button-deschide">Deschide</button></a>
             </div>
-
         </div>
     {% endfor %}
 </div>
