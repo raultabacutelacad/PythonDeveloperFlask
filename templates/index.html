@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Calendar Advent</title>
-    <link href="/css/test.css" rel="stylesheet">
-</head>
-<body>
-<div class="flex-container">
-    {% for ziua in zile %}
-        <div class="zi-container">
-            <img src="{{ url_for('static', filename=ziua.imagine) }}" class="zi-imagine"/>
-            <div class="mesaj">{{ ziua.mesaj }}</div>
-            <div class="button-container">
-                <a href="/edit/{{ ziua.id }}"><button class="button-edit">Editeaza</button></a>
-                <a href="/deschide/{{ ziua.id }}"><button class="button-deschide">Deschide</button></a>
-            </div>
+    <link href="/css/test.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="flex-container">
+      {% for ziua in zile %}
+      <div class="zi-container">
+        {% if ziua.deschis %}
+        <img
+          src="{{ url_for('static', filename=ziua.imagine) }}"
+          class="zi-imagine"
+        />
+        {% else %}
+        <img
+          src="{{ url_for('static', filename='hidden.jpeg') }}"
+          class="zi-imagine"
+        />
+        {% endif %}
+        <div class="mesaj">{{ ziua.mesaj }}</div>
+        <div class="button-container">
+          <a href="/edit/{{ ziua.id }}"
+            ><button class="button-edit">Editeaza</button></a
+          >
+          {%if ziua.deschis == 0 %}
+          <a href="/deschide/{{ ziua.id }}"
+            ><button class="button-deschide">Deschide</button></a
+          >
+          {% else %}
+          <a href="/inchide/{{ ziua.id }}"
+            ><button class="button-inchide">Inchide</button></a
+          >
+          {%endif%}
         </div>
-    {% endfor %}
-</div>
-</body>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
 </html>
